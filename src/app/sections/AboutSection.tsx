@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <div className="w-full flex flex-col mb-96 justify-center items-center relative">
+    <div className="w-full flex flex-col justify-center items-center relative">
       <div className="max-w-3/4 flex items-center gap-20">
         <div className="break-words sticky self-start top-1/3">
           <motion.div
@@ -26,7 +26,7 @@ export default function AboutSection() {
             }}
           />
           <h1 className="text-6xl text-white ml-8 leading-tight">
-            {["Turing", "Ideas", "into", "Interface"].map((text) => (
+            {["Turning", "Ideas", "into", "Interface"].map((text) => (
               <span key={text} className="block">
                 {text}
               </span>
@@ -35,14 +35,19 @@ export default function AboutSection() {
         </div>
 
         <div className="relative space-y-96 mt-56">
-          <motion.p className="text-white font-kanit text-xl tracking-wide font-light text-balance">
-            Hey! Saya Iman Fauzi M, seorang Frontend Developer yang suka ngulik
-            tampilan web biar gak cuma fungsional, tapi juga enak dipandang.
-            Saya fokus di React.js, Vue.js, dan Next.js, plus suka eksperimen
-            dengan animasi dan UI/UX biar website terasa lebih hidup.
-          </motion.p>
+          <div>
+            <h3 className="text-white text-5xl font-medium mb-8">
+              Introduction
+            </h3>
+            <motion.p className="text-white font-kanit text-2xl tracking-wide font-light text-balance">
+              Hey! Saya Iman Fauzi, seorang Frontend Developer yang suka ngulik
+              tampilan web biar gak cuma fungsional, tapi juga enak dipandang.
+              Saya fokus di React.js, dan Next.js, plus suka eksperimen dengan
+              animasi dan UI/UX biar website terasa lebih hidup.
+            </motion.p>
+          </div>
           <div className="text-white text-xl tracking-wide font-light text-balance">
-            <h2 className=" text-5xl font-medium mb-8">🚀 Kenapa Saya?</h2>
+            <h2 className=" text-5xl font-medium mb-8">Kenapa Saya?</h2>
 
             <ul className="space-y-6">
               <li>

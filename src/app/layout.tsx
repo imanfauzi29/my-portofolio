@@ -27,11 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-black">
-      <body className={`${kanit.variable} ${orbitron.variable} antialiased`}>
+    <html lang="en">
+      <body
+        className={`${kanit.variable} ${orbitron.variable} antialiased bg-black`}
+      >
         <LenisWrapper>{children}</LenisWrapper>
         <div className="absolute left-0 top-0 w-full h-full -z-[1] flex">
-          <StarParticles />
+          <StarParticles id="tsParticle2" />
         </div>
         <div className="w-full fixed -z-[1] bottom-0 h-1/2 self-end bg-gradient-to-b from-0% from-transparent to-purple-400/20 " />
         <CustomCursor />
