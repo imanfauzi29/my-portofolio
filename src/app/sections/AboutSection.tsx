@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
-    <div className="w-full flex flex-col justify-center items-center relative">
+    <div className="w-full flex flex-col justify-center items-center relative py-44">
       <div className="max-w-3/4 flex items-center gap-20">
         <div className="break-words sticky self-start top-1/3">
           <motion.div

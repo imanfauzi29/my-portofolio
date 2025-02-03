@@ -32,7 +32,7 @@ export default function MainSection() {
   const opacityOnScroll = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
 
   return (
-    <div className="w-full h-screen flex flex-col mb-96">
+    <div className="w-full h-screen flex flex-col">
       <div className="flex justify-center items-center flex-1 w-full mx-auto max-w-3/4">
         <motion.div className="text-white text-8xl 2xl:text-9xl font-bold leading-32">
           <motion.h1
