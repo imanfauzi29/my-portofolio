@@ -1,38 +1,38 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 
 interface MoveSectionProps {
   reverse?: boolean;
 }
 
 export default function MoveSection({ reverse }: MoveSectionProps) {
-  const { scrollYProgress } = useScroll();
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: ref, layoutEffect: true });
 
   const [inputRange, outputRange] = useMemo(
     () =>
       reverse
         ? [
             [0, 1],
-            [250, 1],
+            [200, 1],
           ]
         : [
-            [0.2, 0.6],
-            [1, 500],
+            [0, 1],
+            [1, 200],
           ],
     [reverse],
   );
   const scale = useTransform(scrollYProgress, inputRange, outputRange, {
-    clamp: false,
     mixer: (from, to) => (v) => {
-      const easedV = Math.pow(v, 3.5);
+      const easedV = Math.pow(v, 2.5);
       return from + (to - from) * easedV;
     },
   });
 
   return (
-    <div className="h-[500vh] relative">
+    <section ref={ref} className="h-[500vh] relative">
       <div className="h-screen sticky overflow-hidden top-0 mx-auto">
         <div className="flex h-full">
           <motion.h1
@@ -43,6 +43,6 @@ export default function MoveSection({ reverse }: MoveSectionProps) {
           </motion.h1>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
