@@ -14,6 +14,7 @@ export default function Home() {
       <div className="bg-white">
         <ProjectSection />
       </div>
+      <MoveSection reverse />
     </main>
   );
 }

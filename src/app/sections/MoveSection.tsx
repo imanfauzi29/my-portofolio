@@ -1,14 +1,29 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect } from "react";
-import { useCursorStore } from "@/lib/store/useCursorStore";
+import { useMemo } from "react";
 
-export default function MoveSection() {
-  const { setMode } = useCursorStore((store) => store);
+interface MoveSectionProps {
+  reverse?: boolean;
+}
 
+export default function MoveSection({ reverse }: MoveSectionProps) {
   const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 0.7, 0.8], [1, 40, 800], {
+
+  const [inputRange, outputRange] = useMemo(
+    () =>
+      reverse
+        ? [
+            [0, 1],
+            [250, 1],
+          ]
+        : [
+            [0.2, 0.6],
+            [1, 500],
+          ],
+    [reverse],
+  );
+  const scale = useTransform(scrollYProgress, inputRange, outputRange, {
     clamp: false,
     mixer: (from, to) => (v) => {
       const easedV = Math.pow(v, 3.5);
@@ -16,21 +31,8 @@ export default function MoveSection() {
     },
   });
 
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (latest) => {
-      if (typeof window !== "undefined") {
-        if (latest > 0.8) {
-          setMode("light");
-        } else {
-          setMode("dark");
-        }
-      }
-    });
-    return () => unsubscribe();
-  }, [scrollYProgress]);
-
   return (
-    <div className="h-[1000vh] relative">
+    <div className="h-[500vh] relative">
       <div className="h-screen sticky overflow-hidden top-0 mx-auto">
         <div className="flex h-full">
           <motion.h1
