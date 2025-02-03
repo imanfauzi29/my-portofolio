@@ -1,20 +1,13 @@
-import { RefObject, useEffect, useState } from "react";
-import { frame, useMotionValue, useSpring } from "framer-motion";
+import { RefObject, useEffect } from "react";
+import { frame, SpringOptions, useMotionValue, useSpring } from "framer-motion";
 
-const spring = { damping: 8, stiffness: 40, restDelta: 0.001 };
+const spring: SpringOptions = { damping: 30, stiffness: 300, restDelta: 0.1 };
 
 export function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
   const xPoint = useMotionValue(0);
   const yPoint = useMotionValue(0);
   const x = useSpring(xPoint, spring);
   const y = useSpring(yPoint, spring);
-  const [tagType, setTagType] = useState<{
-    type: string;
-    additional: null | unknown;
-  }>({
-    type: "default",
-    additional: null,
-  });
 
   useEffect(() => {
     if (!ref.current) return;
@@ -28,28 +21,7 @@ export function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
       });
     };
 
-    const handlePointerEnter = (e: MouseEvent) => {
-      if (e.target instanceof HTMLElement) {
-        // if (/[P|H1]/.test(e.target.tagName)) {
-        //   setTagType({
-        //     type: "text",
-        //     additional: { height: e.target.clientHeight },
-        //   });
-        //   return;
-        // }
-        if (/[BUTTON]/.test(e.target.tagName)) {
-          setTagType({
-            type: "button",
-            additional: null,
-          });
-        }
-
-        setTagType({ type: "default", additional: null });
-      }
-    };
-
     if (typeof window !== "undefined") {
-      document.body.addEventListener("pointerenter", handlePointerEnter, true);
       window.addEventListener("pointermove", handlePointerMove);
     }
 
@@ -60,5 +32,5 @@ export function useFollowPointer(ref: RefObject<HTMLDivElement | null>) {
     };
   }, []);
 
-  return { x, y, tagType };
+  return { x, y };
 }

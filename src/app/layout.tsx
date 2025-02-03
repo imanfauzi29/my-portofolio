@@ -30,6 +30,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${kanit.variable} ${orbitron.variable} antialiased bg-black`}
+        data-color="dark"
       >
         <LenisWrapper>{children}</LenisWrapper>
         <div className="absolute left-0 top-0 w-full h-full -z-[1] flex">

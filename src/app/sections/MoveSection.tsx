@@ -1,10 +1,14 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect } from "react";
+import { useCursorStore } from "@/lib/store/useCursorStore";
 
 export default function MoveSection() {
+  const { setMode } = useCursorStore((store) => store);
+
   const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 0.8, 1], [1, 40, 1000], {
+  const scale = useTransform(scrollYProgress, [0, 0.7, 0.8], [1, 40, 800], {
     clamp: false,
     mixer: (from, to) => (v) => {
       const easedV = Math.pow(v, 3.5);
@@ -12,19 +16,19 @@ export default function MoveSection() {
     },
   });
 
-  // useEffect(() => {
-  //   const unsubscribe = scrollYProgress.on("change", (latest) => {
-  //     if (typeof window !== "undefined") {
-  //       console.log(latest);
-  //       if (latest > 0.907966) {
-  //         document.body.style.backgroundColor = "#fff";
-  //       } else {
-  //         document.body.style.backgroundColor = "#000";
-  //       }
-  //     }
-  //   });
-  //   return () => unsubscribe();
-  // }, []);
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on("change", (latest) => {
+      if (typeof window !== "undefined") {
+        if (latest > 0.8) {
+          setMode("light");
+        } else {
+          setMode("dark");
+        }
+      }
+    });
+    return () => unsubscribe();
+  }, [scrollYProgress]);
+
   return (
     <div className="h-[1000vh] relative">
       <div className="h-screen sticky overflow-hidden top-0 mx-auto">

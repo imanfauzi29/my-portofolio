@@ -25,17 +25,28 @@ export default function AboutSection() {
               ease: "easeInOut",
             }}
           />
-          <h1 className="text-6xl text-white ml-8 leading-tight">
+          <motion.h1
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="text-6xl text-white ml-8 leading-tight"
+          >
             {["Turning", "Ideas", "into", "Interface"].map((text) => (
               <span key={text} className="block">
                 {text}
               </span>
             ))}
-          </h1>
+          </motion.h1>
         </div>
 
         <div className="relative space-y-96 mt-56">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
             <h3 className="text-white text-5xl font-medium mb-8">
               Introduction
             </h3>
@@ -45,8 +56,14 @@ export default function AboutSection() {
               Saya fokus di React.js, dan Next.js, plus suka eksperimen dengan
               animasi dan UI/UX biar website terasa lebih hidup.
             </motion.p>
-          </div>
-          <div className="text-white text-xl tracking-wide font-light text-balance">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
+            viewport={{ once: true }}
+            className="text-white text-xl tracking-wide font-light text-balance"
+          >
             <h2 className=" text-5xl font-medium mb-8">Kenapa Saya?</h2>
 
             <ul className="space-y-6">
@@ -86,7 +103,7 @@ export default function AboutSection() {
                 </span>
               </li>
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>
