@@ -41,7 +41,7 @@ export default function ProjectSection() {
         <div className="ml-20">Showcase</div>
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-56 gap-y-8 max-w-3/4 mx-auto mb-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-22 2xl:gap-x-56 gap-y-8 max-w-3/4 mx-auto mb-32">
         <div className="flex flex-col gap-10">
           {projects
             .filter((_, i) => i % 2 === 0)

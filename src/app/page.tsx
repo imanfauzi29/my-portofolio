@@ -3,7 +3,7 @@ import AboutSection from "@/app/sections/AboutSection";
 import MoveSection from "@/app/sections/MoveSection";
 import ProjectSection from "@/app/sections/ProjectSection";
 import TaglineSection from "@/app/sections/TaglineSection";
-import SocmedSection from "@/app/sections/SocmedSection";
+import ContactSection from "@/app/sections/ContactSection";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
         <ProjectSection />
       </div>
       <MoveSection reverse />
-      <SocmedSection />
+      <ContactSection />
     </main>
   );
 }

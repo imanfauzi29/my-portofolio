@@ -22,7 +22,7 @@ export default function ProjectList({
     <Magnetic>
       <CursorWrapper color="bg-white !text-black" type="button" text="View">
         <Link href={link} className="flex gap-4 flex-col">
-          <OverlayCard className=" rounded-4xl h-[520px]">
+          <OverlayCard className="rounded-4xl h-[520px]">
             <Image
               src={image}
               alt=""
