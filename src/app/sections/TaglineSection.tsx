@@ -7,7 +7,13 @@ import { motion } from "framer-motion";
 export default function TaglineSection() {
   return (
     <div className="h-screen flex flex-col justify-center items-center w-full">
-      <div className="max-w-4/5">
+      <motion.div
+        className="max-w-4/5"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.7 }}
+      >
         <CursorWrapper type="button">
           <Magnetic>
             <motion.h1
@@ -33,7 +39,7 @@ export default function TaglineSection() {
             </motion.h1>
           </Magnetic>
         </CursorWrapper>
-      </div>
+      </motion.div>
     </div>
   );
 }

@@ -65,6 +65,8 @@ export default function MainSection() {
         <motion.div
           className="max-w-32 relative"
           style={{ opacity: opacityOnScroll }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
         >
           <motion.div
             className="h-full absolute w-1 bg-purple-500"
