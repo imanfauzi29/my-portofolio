@@ -1,7 +1,5 @@
 import MainSection from "@/app/sections/MainSection";
 import AboutSection from "@/app/sections/AboutSection";
-import MoveSection from "@/app/sections/MoveSection";
-import ProjectSection from "@/app/sections/ProjectSection";
 import TaglineSection from "@/app/sections/TaglineSection";
 import ContactSection from "@/app/sections/ContactSection";
 
@@ -11,11 +9,11 @@ export default function Home() {
       <MainSection />
       <AboutSection />
       <TaglineSection />
-      <MoveSection />
-      <div className="bg-white">
-        <ProjectSection />
-      </div>
-      <MoveSection reverse />
+      {/*<MoveSection />*/}
+      {/*<div className="bg-white">*/}
+      {/*  <ProjectSection />*/}
+      {/*</div>*/}
+      {/*<MoveSection reverse />*/}
       <ContactSection />
     </main>
   );
