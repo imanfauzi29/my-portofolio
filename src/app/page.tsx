@@ -11,11 +11,11 @@ export default function Home() {
       <MainSection />
       <AboutSection />
       <TaglineSection />
-      <MoveSection />
+{/*       <MoveSection />
       <div className="bg-white">
         <ProjectSection />
       </div>
-      <MoveSection reverse />
+      <MoveSection reverse /> */}
       <ContactSection />
     </main>
   );
