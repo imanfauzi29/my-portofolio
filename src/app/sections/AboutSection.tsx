@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"
 
 export default function AboutSection() {
   return (
-    <div className="w-full flex flex-col justify-center items-center relative py-44">
-      <div className="max-w-3/4 flex items-center gap-20">
-        <div className="break-words sticky self-start top-1/3">
+    <div className="relative flex w-full flex-col items-center justify-center py-22 md:py-44">
+      <div className="flex flex-col items-center gap-20 px-8 md:max-w-3/4 md:flex-row md:gap-20">
+        <div className="top-1/3 self-start break-words md:sticky">
           <motion.div
-            className="h-full absolute w-2 "
+            className="absolute hidden h-full w-2 md:block"
             animate={{
               backgroundColor: [
                 "rgb(11, 13, 23)",
@@ -30,7 +30,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1, delay: 0.5 }}
-            className="text-6xl text-white ml-8 leading-tight"
+            className="text-6xl leading-tight text-white md:ml-8"
           >
             {["Turning", "Ideas", "into", "Interface"].map((text) => (
               <span key={text} className="block">
@@ -40,21 +40,21 @@ export default function AboutSection() {
           </motion.h1>
         </div>
 
-        <div className="relative space-y-96 mt-56">
+        <div className="font-kanit relative space-y-20 md:mt-56 md:space-y-96">
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-white text-5xl font-medium mb-8">
+            <h3 className="mb-8 text-4xl font-medium text-white md:text-5xl">
               Introduction
             </h3>
-            <motion.p className="text-white font-kanit text-2xl tracking-wide font-light text-balance">
-              Hey! Saya Iman Fauzi, seorang Frontend Developer yang suka ngulik
-              tampilan web biar gak cuma fungsional, tapi juga enak dipandang.
-              Saya fokus di React.js, dan Next.js, plus suka eksperimen dengan
-              animasi dan UI/UX biar website terasa lebih hidup.
+            <motion.p className="font-kanit text-justify font-light hyphens-auto text-white md:text-2xl md:tracking-wide md:text-balance">
+              Hey! I&#39;m Iman Fauzi, a Frontend Developer who loves refining
+              web designs to be not just functional but also visually appealing.
+              I specialize in React.js and Next.js, and I enjoy experimenting
+              with animations and UI/UX to make websites feel more alive.
             </motion.p>
           </motion.div>
           <motion.div
@@ -62,44 +62,37 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: true }}
-            className="text-white text-xl tracking-wide font-light text-balance"
+            className="text-xl font-light tracking-wide text-balance text-white"
           >
-            <h2 className=" text-5xl font-medium mb-8">Kenapa Saya?</h2>
+            <h2 className="mb-8 text-5xl font-medium">Why Me?</h2>
 
             <ul className="space-y-6">
               <li>
-                <h5 className="block text-xl font-medium font-kanit">
-                  Frontend Freak
-                </h5>
-                <span className="font-kanit text-gray-300">
-                  Ngoding UI bukan cuma kerjaan, tapi juga hobi.
+                <h5 className="block text-xl font-medium">Frontend Freak</h5>
+                <span className="text-gray-300">
+                  Coding UI isn’t just a job, it’s a hobby.
                 </span>
               </li>
               <li>
-                <h5 className="block text-xl font-medium font-kanit">
+                <h5 className="block text-xl font-medium">
                   Pixel Perfect Enthusiast
                 </h5>
-                <span className="font-kanit text-gray-300">
-                  Kalau ada yang miring dikit, auto refactor.
+                <span className="text-gray-300">
+                  If something’s slightly off, I’ll refactor it immediately.
                 </span>
               </li>
               <li>
-                <h5 className="block text-xl font-medium font-kanit">
-                  Fast & Optimized
-                </h5>
-                <span className="font-kanit text-gray-300">
-                  Bukan cuma cepat coding, tapi juga performa website harus
-                  kencang! refactor.
+                <h5 className="block text-xl font-medium">Fast & Optimized</h5>
+                <span className="text-gray-300">
+                  It’s not just about coding fast—website performance must be
+                  top-notch!
                 </span>
               </li>
               <li>
-                <h5 className="block text-xl font-medium font-kanit">
-                  Selalu Belajar
-                </h5>
-                <span className="font-kanit text-gray-300">
-                  Lagi ngulik Docker & Wazuh SIEM, siapa tahu nanti jadi
-                  full-stack atau sekalian masuk ke cybersecurity hehe.
-                  refactor.
+                <h5 className="block text-xl font-medium">Always Learning</h5>
+                <span className="text-gray-300">
+                  Currently exploring Docker & interested in becoming a
+                  pentester.
                 </span>
               </li>
             </ul>
@@ -107,5 +100,5 @@ export default function AboutSection() {
         </div>
       </div>
     </div>
-  );
+  )
 }

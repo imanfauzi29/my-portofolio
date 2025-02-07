@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import Magnetic from "@/components/ui/Magnetic";
-import { motion } from "framer-motion";
-import { CursorWrapper } from "@/components/ui/CustomCursor";
-import ButtonAnimateSlide from "@/components/button/ButtonAnimateSlide";
-import { FaWhatsapp } from "react-icons/fa";
-import { MdOutlineMailOutline } from "react-icons/md";
-import { ImLinkedin } from "react-icons/im";
-import { BsMedium } from "react-icons/bs";
-import { SiBlogger } from "react-icons/si";
+import Link from "next/link"
+import Magnetic from "@/components/ui/Magnetic"
+import { motion } from "framer-motion"
+import { CursorWrapper } from "@/components/ui/CustomCursor"
+import ButtonAnimateSlide from "@/components/button/ButtonAnimateSlide"
+import { FaWhatsapp } from "react-icons/fa"
+import { MdOutlineMailOutline } from "react-icons/md"
+import { ImLinkedin } from "react-icons/im"
+import { BsMedium } from "react-icons/bs"
+import { SiBlogger } from "react-icons/si"
 
 const animation = {
   transition: {
@@ -27,12 +27,12 @@ const animation = {
   animate: {
     backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
   },
-};
+}
 
 export default function ContactSection() {
   return (
-    <section className="h-screen overflow-hidden flex py-22 px-22 justify-center items-center">
-      <div className="h-full w-full flex flex-col">
+    <section className="flex h-screen items-center justify-center overflow-hidden p-10 md:p-22">
+      <div className="flex h-full w-full flex-col">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -41,7 +41,7 @@ export default function ContactSection() {
             visible: { opacity: 1, y: 0, transition: { staggerChildren: 0.2 } },
           }}
           viewport={{ once: true, amount: 0.3 }}
-          className="flex-1 text-9xl text-white font-semibold leading-tight w-fit"
+          className="w-fit flex-1 text-5xl leading-tight font-semibold text-wrap text-white md:text-8xl lg:text-9xl"
         >
           <motion.h1
             variants={{
@@ -62,7 +62,7 @@ export default function ContactSection() {
               <CursorWrapper type="button">
                 <Link href="mailto:contact@ifauzi.space">
                   <motion.h1
-                    className="font-kanit tracking-wide relative"
+                    className="font-kanit relative flex flex-wrap tracking-wide"
                     initial="rest"
                     whileHover="hover"
                     animate="rest"
@@ -93,9 +93,9 @@ export default function ContactSection() {
           </motion.div>
         </motion.div>
 
-        <div className="flex justify-between">
+        <div className="flex flex-wrap justify-between gap-4">
           <div>
-            <div className="flex gap-4">
+            <div className="flex flex-col gap-4 md:flex-row">
               <motion.div
                 initial={{ y: 40 }}
                 whileInView={{ y: 0 }}
@@ -128,7 +128,7 @@ export default function ContactSection() {
               </motion.div>
             </div>
           </div>
-          <div className="flex gap-4">
+          <div className="flex flex-col gap-4 md:flex-row">
             <ButtonAnimateSlide
               text="imanfauzi29"
               url="https://linkedin.com/in/imanfauzi29"
@@ -151,5 +151,5 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
-  );
+  )
 }

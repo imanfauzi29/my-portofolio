@@ -71,7 +71,7 @@ export default function PopupLayout<
       <AnimatePresence mode="wait">
         {selectedLayout && (
           <motion.div
-            className="bg-opacity-80 fixed inset-0 z-50 flex items-center justify-center bg-black"
+            className="bg-opacity-80 fixed inset-0 z-50 flex h-screen items-center justify-center bg-black md:items-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -84,9 +84,10 @@ export default function PopupLayout<
               layoutId={layoutIdName(selectedLayout)}
               data-testid="popup-layout-content"
               className={cn(
-                "flex max-h-[80vh] w-full max-w-3/4 flex-col gap-12 overflow-auto rounded-2xl bg-white p-12",
+                "flex max-h-[80vh] w-full max-w-5/6 flex-col gap-12 overflow-y-auto overscroll-contain rounded-2xl bg-white p-12 md:max-w-3/4",
                 className,
               )}
+              onScroll={(e) => e.stopPropagation()}
             >
               {children(selectedLayout)}
             </motion.div>

@@ -15,15 +15,15 @@ interface ProjectDialogProps {
 
 export default function ProjectDialog({ children, lists }: ProjectDialogProps) {
   return (
-    <PopupLayout lists={lists} render={children} layoutId="id" close="dblclick">
+    <PopupLayout lists={lists} render={children} layoutId="id">
       {({ title, image, description, url, tech }) => (
         <>
-          <div className="flex gap-24">
+          <div className="flex flex-col gap-24 lg:flex-row">
             <div className="relative rounded-xl">
               <FoldImages images={image} />
             </div>
             <div className="font-kanit flex flex-1 flex-col gap-8">
-              <h1 className="text-6xl font-semibold">{title}</h1>
+              <h1 className="text-2xl font-semibold md:text-6xl">{title}</h1>
               {url && (
                 <Link
                   href={url}
@@ -34,7 +34,7 @@ export default function ProjectDialog({ children, lists }: ProjectDialogProps) {
                 </Link>
               )}
               <div
-                className="font-light text-gray-800"
+                className="list-disc text-justify font-light hyphens-auto text-gray-800 md:text-balance"
                 dangerouslySetInnerHTML={{
                   __html: description,
                 }}

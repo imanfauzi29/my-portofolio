@@ -32,7 +32,7 @@ export default function ProjectList({
           <OverlayCard className="h-[520px] min-w-64 rounded-4xl">
             <Image
               src={image[0].image}
-              alt={image[0].alt}
+              alt=""
               data-id={image[0].id}
               width={0}
               height={0}

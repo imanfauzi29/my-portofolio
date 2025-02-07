@@ -90,11 +90,6 @@ export const projects: ProjectListType[] = [
         image: `${baseUrl}/lumoshive/stp-2.png`,
         alt: "Sales Track Pro (Feature kanban)",
       },
-      {
-        id: 3,
-        image: `${baseUrl}/lumoshive/stp-3.png`,
-        alt: "Sales Track Pro (Feature kanban)",
-      },
     ],
   },
   {

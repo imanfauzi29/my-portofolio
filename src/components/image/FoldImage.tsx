@@ -58,12 +58,15 @@ function FoldImage({ image, setImages, images, onClick }: FoldImageProps) {
       sizes="100vw"
       layoutId={image.id.toString()}
       data-testid={image.id}
-      onClick={() => isFront && handleClickImage(image)}
+      onClick={(e) => {
+        e.stopPropagation()
+        return isFront && handleClickImage(image)
+      }}
       className={cn(
         "h-96 w-80 origin-bottom cursor-grab overflow-hidden rounded-2xl object-cover active:cursor-grabbing",
         isFront ? "shadow-xl" : undefined,
       )}
-      alt={image.alt}
+      alt=""
       style={{
         zIndex: images.length - images.indexOf(image),
         gridColumn: 1,
@@ -112,7 +115,10 @@ export default function FoldImages({ images }: FoldImagesProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedImage(null)}
+            onClick={(e) => {
+              e.stopPropagation()
+              setSelectedImage(null)
+            }}
           >
             <motion.div className="relative">
               <Image
