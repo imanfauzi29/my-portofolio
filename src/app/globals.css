@@ -5,7 +5,11 @@
 }
 
 .font-kanit {
-    font-family: var(--font-kanit);
+    font-family: var(--font-kanit) !important;
+}
+
+.font-kanit * {
+    font-family: inherit;
 }
 
 .glow-text {

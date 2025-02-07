@@ -60,7 +60,7 @@ export default function ContactSection() {
           >
             <Magnetic>
               <CursorWrapper type="button">
-                <Link href="mailto:ifauzi@mail.tech">
+                <Link href="mailto:contact@ifauzi.space">
                   <motion.h1
                     className="font-kanit tracking-wide relative"
                     initial="rest"
@@ -76,7 +76,7 @@ export default function ContactSection() {
                     transition={animation.transition}
                     style={animation.style}
                   >
-                    ifauzi
+                    contact
                     <motion.span
                       className="font-kanit"
                       animate={animation.animate}
@@ -85,7 +85,7 @@ export default function ContactSection() {
                     >
                       @
                     </motion.span>
-                    mail.tech
+                    ifauzi.space
                   </motion.h1>
                 </Link>
               </CursorWrapper>
@@ -102,8 +102,8 @@ export default function ContactSection() {
                 viewport={{ amount: 0.4 }}
               >
                 <ButtonAnimateSlide
-                  text="ifauzi@mail.tech"
-                  url="mailto:ifauzi@mail.tech"
+                  text="contact@ifauzi.space"
+                  url="mailto:contact@ifauzi.space"
                   icon={MdOutlineMailOutline}
                   target="_blank"
                 />

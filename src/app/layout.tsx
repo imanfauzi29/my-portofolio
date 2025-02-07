@@ -4,6 +4,7 @@ import "./globals.css";
 import StarParticles from "@/components/particles/StarParticles";
 import LenisWrapper from "@/components/layout/LenisWrapper";
 import CustomCursor from "@/components/ui/CustomCursor";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const kanit = Kanit({
   variable: "--font-kanit",
@@ -38,6 +39,7 @@ export default function RootLayout({
         </div>
         <div className="w-full fixed -z-[1] bottom-0 h-1/2 self-end bg-gradient-to-b from-0% from-transparent to-purple-400/20 " />
         <CustomCursor />
+        <SpeedInsights />
       </body>
     </html>
   );
