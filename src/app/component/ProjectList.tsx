@@ -2,19 +2,25 @@ import { CursorWrapper } from "@/components/ui/CustomCursor"
 import OverlayCard from "@/components/ui/OverlayCard"
 import Image from "next/image"
 import Magnetic from "@/components/ui/Magnetic"
+import { FoldImageType } from "@/components/image/foldImage.type"
+import { StackList } from "@/lib/helper/stackList"
 
 export type ProjectListType = {
   id: number
   title: string
   description: string
-  image: string
-}
-interface ProjectListProps extends ProjectListType {
-  onClick: (list: ProjectListType) => void
+  shortDescription: string
+  image: FoldImageType[]
+  url: string | null
+  tech: StackList[] | string[]
 }
 
-export default function ProjectList({ onClick, ...rest }: ProjectListProps) {
-  const { id, title, image, description } = rest
+export default function ProjectList({
+  id,
+  title,
+  image,
+  shortDescription,
+}: ProjectListType) {
   return (
     <Magnetic>
       <CursorWrapper color="bg-white !text-black" type="button" text="View">
@@ -22,16 +28,16 @@ export default function ProjectList({ onClick, ...rest }: ProjectListProps) {
           className="flex cursor-pointer flex-col gap-4"
           type="button"
           data-id={id}
-          onClick={() => onClick(rest)}
         >
-          <OverlayCard className="h-[520px] rounded-4xl">
+          <OverlayCard className="h-[520px] min-w-64 rounded-4xl">
             <Image
-              src={image}
-              alt=""
+              src={image[0].image}
+              alt={image[0].alt}
+              data-id={image[0].id}
               width={0}
               height={0}
               sizes="100vw"
-              className="h-full w-full object-cover"
+              className="size-full object-cover"
             />
           </OverlayCard>
           <div>
@@ -39,7 +45,7 @@ export default function ProjectList({ onClick, ...rest }: ProjectListProps) {
               <h3 className="text-2xl font-medium">
                 <span className="font-kanit">{title} - </span>
                 <span className="font-kanit !text-xl !font-light">
-                  {description}
+                  {shortDescription}
                 </span>
               </h3>
             </div>

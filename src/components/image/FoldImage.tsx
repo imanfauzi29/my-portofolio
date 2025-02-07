@@ -39,12 +39,12 @@ function FoldImage({ image, setImages, images }: FoldImageProps) {
       width="0"
       height="0"
       sizes="100vw"
-      data-testid="fold-image"
+      data-testid={image.id}
       className={cn(
         "h-96 w-80 origin-bottom overflow-hidden rounded-2xl object-cover",
         isFront ? "shadow-xl" : undefined,
       )}
-      alt="image"
+      alt={image.alt}
       style={{
         zIndex: images.length - images.indexOf(image),
         gridColumn: 1,
@@ -65,18 +65,19 @@ interface FoldImagesProps {
   images: FoldImageType[]
 }
 export default function FoldImages({ images }: FoldImagesProps) {
-  const [rawImages, setRawImages] = useState<FoldImageType[]>(images)
+  const [rawImages, setRawImages] = useState<FoldImageType[]>(images || [])
 
   return (
     <div className="grid place-items-center">
-      {rawImages.map((image, index) => (
-        <FoldImage
-          key={index}
-          image={image}
-          setImages={setRawImages}
-          images={rawImages}
-        />
-      ))}
+      {!!rawImages.length &&
+        rawImages.map((image, index) => (
+          <FoldImage
+            key={index}
+            image={image}
+            setImages={setRawImages}
+            images={rawImages}
+          />
+        ))}
     </div>
   )
 }
