@@ -4,6 +4,9 @@ import { MdOpenInNew } from "react-icons/md"
 import FoldImages from "@/components/image/FoldImage"
 import PopupLayout from "@/components/ui/PopupLayout"
 import { motion } from "framer-motion"
+import { StackList, stackList } from "@/lib/helper/stackList"
+import Image from "next/image"
+import Magnetic from "@/components/ui/Magnetic"
 
 interface ProjectDialogProps {
   lists: ProjectListType[]
@@ -13,29 +16,52 @@ interface ProjectDialogProps {
 export default function ProjectDialog({ children, lists }: ProjectDialogProps) {
   return (
     <PopupLayout lists={lists} render={children} layoutId="id" close="dblclick">
-      {({ title, image, description, url }) => (
+      {({ title, image, description, url, tech }) => (
         <>
-          <div className="flex gap-12">
-            <div className="relative rounded-xl shadow-md">
+          <div className="flex gap-24">
+            <div className="relative rounded-xl">
               <FoldImages images={image} />
             </div>
-            <div className="flex flex-1 flex-col gap-8">
-              <h1 className="font-kanit text-6xl font-semibold">{title}</h1>
+            <div className="font-kanit flex flex-1 flex-col gap-8">
+              <h1 className="text-6xl font-semibold">{title}</h1>
               {url && (
                 <Link
                   href={url}
                   target="_blank"
-                  className="font-kanit flex items-center gap-2 text-gray-400 decoration-dotted underline-offset-4 hover:underline"
+                  className="flex items-center gap-2 text-gray-400 decoration-dotted underline-offset-4 hover:underline"
                 >
                   {url} <MdOpenInNew />
                 </Link>
               )}
               <div
-                className="font-kanit font-light text-gray-800"
+                className="font-light text-gray-800"
                 dangerouslySetInnerHTML={{
                   __html: description,
                 }}
               />
+              <div className="flex flex-wrap gap-4">
+                {!!tech.length &&
+                  tech.map((item, i) => (
+                    <Magnetic key={i}>
+                      <div
+                        key={i}
+                        className="flex cursor-default gap-2 rounded-full border border-gray-400 px-3 py-1 text-sm text-gray-700"
+                      >
+                        {stackList[item as StackList] && (
+                          <Image
+                            src={stackList[item as StackList]}
+                            alt={item}
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            className="size-5"
+                          />
+                        )}
+                        <span>{item}</span>
+                      </div>
+                    </Magnetic>
+                  ))}
+              </div>
             </div>
           </div>
           <div className="flex justify-center">

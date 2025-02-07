@@ -18,6 +18,6 @@ export const stackList = {
   Typescript: "/images/stack-icons/Typescript.svg",
   "Vue.js": "/images/stack-icons/Vue.js.svg",
   WordPress: "/images/stack-icons/WordPress.svg",
-} as const
+}
 
 export type StackList = keyof typeof stackList

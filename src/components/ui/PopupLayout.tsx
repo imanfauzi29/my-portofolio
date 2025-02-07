@@ -11,6 +11,7 @@ interface PopupLayoutProps<T extends string | Record<string, unknown>> {
   children: (data: T) => React.ReactNode
   close?: "click" | "dblclick"
   className?: string
+  renderClassName?: string
 }
 
 export default function PopupLayout<
@@ -22,6 +23,7 @@ export default function PopupLayout<
   children,
   close = "click",
   className,
+  renderClassName,
 }: PopupLayoutProps<T>) {
   const [selectedLayout, setSelectedLayout] = useState<T | null>(null)
 
@@ -60,7 +62,7 @@ export default function PopupLayout<
           key={i}
           layoutId={layoutIdName(layout)}
           data-testid="popup-layout"
-          className="cursor-zoom-in"
+          className={cn(renderClassName)}
           onClick={() => setSelectedLayout(layout)}
         >
           {render(layout)}
