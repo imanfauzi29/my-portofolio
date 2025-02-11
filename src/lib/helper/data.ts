@@ -5,42 +5,33 @@ export const projects: ProjectListType[] = [
   {
     id: 1,
     title: "Portofolio Website",
-    description: "",
-    shortDescription: "",
+    description:
+      "<p>This personal portfolio website is developed using <strong>Next.js 15</strong> and enhanced with <strong>Framer Motion</strong> for smooth animations. Designed with a <strong>space theme</strong>, it offers an immersive experience with stellar aesthetics and dynamic interactions.<ul><li><strong>Technology:</strong> Next.js 15, Framer Motion<li><strong>Theme:</strong> Space / Outer Space<li><strong>Features:</strong> Smooth animations, interactive UI, optimized performance</ul>",
+    shortDescription:
+      "Personal portfolio website built with Next.js 15 and Framer Motion, featuring a space-themed design.",
     url: "ifauzi.space",
     tech: ["Next.js", "TailwindCSS", "Typescript", "Framer Motion", "Zustand"],
     image: [
       { id: 1, image: `${baseUrl}/porto-1.png`, alt: "Portofolio Website" },
-      { id: 2, image: `${baseUrl}/porto-2.png`, alt: "Portofolio Website" },
-      { id: 3, image: `${baseUrl}/porto-3.png`, alt: "Portofolio Website" },
     ],
   },
   {
     id: 2,
     title: "Customer Dashboard Invie",
-    description: "",
-    shortDescription: "",
-    url: null,
+    description:
+      "<p><strong>Invie</strong> is a digital invitation platform that allows anyone to create invitations at an affordable price with a variety of features. In this project, I was responsible for developing the <strong>customer web</strong> using <strong>NextJS</strong>, integrating <strong>next-auth</strong> for secure and seamless authentication.<p>Key technologies and features include:<ul><li><strong>NextJS</strong> for a fast and scalable application.<li><strong>next-auth</strong> for secure user authentication.<li><strong>TailwindCSS</strong> for a modern and responsive UI.<li><strong>React-query</strong> for efficient data management.<li><strong>Formik & Yup</strong> for robust form handling and validation.</ul><p>By leveraging these technologies, Invie provides an <strong>optimal user experience</strong>, making digital invitation creation <strong>simple, efficient, and visually appealing</strong>.",
+    shortDescription: "NextJS-based digital invitation platform",
+    url: "invie.id",
     tech: ["Next.js", "TailwindCSS", "Typescript", "Framer Motion", "Zustand"],
     image: [
       {
         id: 1,
-        image: `${baseUrl}/invie-1.png`,
+        image: `${baseUrl}/invie/invie-1.png`,
         alt: "Customer Dashboard Invie",
       },
       {
         id: 2,
-        image: `${baseUrl}/invie-2.png`,
-        alt: "Customer Dashboard Invie",
-      },
-      {
-        id: 3,
-        image: `${baseUrl}/invie-3.png`,
-        alt: "Customer Dashboard Invie",
-      },
-      {
-        id: 4,
-        image: `${baseUrl}/invie-4.png`,
+        image: `${baseUrl}/invie/invie-2.png`,
         alt: "Customer Dashboard Invie",
       },
     ],
@@ -75,7 +66,7 @@ export const projects: ProjectListType[] = [
     id: 4,
     title: "Sales Track Pro (Feature kanban)",
     description:
-      "<p>In this project, I worked as a <strong>Frontend Developer</strong> responsible for building a new <strong>Kanban feature</strong> using Laravel, Blade, and jQuery. I developed a dynamic and interactive interface using vanilla JavaScript and leveraged the <strong>jKanban</strong> library to enhance user experience.<p>By utilizing <strong>full DOM manipulation</strong> and jQuery integration, I ensured seamless real-time interactions without requiring page reloads. The key features include:<ul><li>Dynamically adding new tasks.<li>Drag-and-drop task movement between columns.<li>Instantly deleting tasks without refreshing the page.</ul><p>Additionally, I optimized the interface for <strong>responsiveness</strong>, ensuring a smooth user experience across different devices and screen resolutions. This combination of technologies resulted in a <strong>modern, flexible, and efficient</strong> task management system.",
+      "<p>In this project, I worked as a <strong>Frontend Developer</strong> responsible for building a new <strong>Kanban feature</strong> using Laravel, Blade, and jQuery. I developed a dynamic and interactive interface using vanilla JavaScript and leveraged the <strong>jKanban</strong> library to enhance user experience.<p>By utilizing <strong>full DOM manipulation</strong> and jQuery integration, I ensured seamless real-time interactions without requiring page reloads. The key features include:<ul class='ml-10'><li class='list-disc'>Dynamically adding new tasks.<li class='list-disc'>Drag-and-drop task movement between columns.<li class='list-disc'>Instantly deleting tasks without refreshing the page.</ul><p>Additionally, I optimized the interface for <strong>responsiveness</strong>, ensuring a smooth user experience across different devices and screen resolutions. This combination of technologies resulted in a <strong>modern, flexible, and efficient</strong> task management system.",
     shortDescription: "Interactive Kanban board with Laravel & jQuery",
     url: null,
     tech: ["Laravel", "Bootstrap"],
@@ -164,10 +155,11 @@ export const projects: ProjectListType[] = [
     url: null,
     tech: ["React", "Typescript", "TailwindCSS"],
     image: [
-      { id: 1, image: `${baseUrl}/ob-1.png`, alt: "OjekBro Admin" },
-      { id: 2, image: `${baseUrl}/ob-2.png`, alt: "OjekBro Admin" },
-      { id: 3, image: `${baseUrl}/ob-3.png`, alt: "OjekBro Admin" },
-      { id: 4, image: `${baseUrl}/ob-4.png`, alt: "OjekBro Admin" },
+      { id: 1, image: `${baseUrl}/ojekbro/ob-1.png`, alt: "OjekBro Admin" },
+      { id: 2, image: `${baseUrl}/ojekbro/ob-2.png`, alt: "OjekBro Admin" },
+      { id: 3, image: `${baseUrl}/ojekbro/ob-3.png`, alt: "OjekBro Admin" },
+      { id: 4, image: `${baseUrl}/ojekbro/ob-4.png`, alt: "OjekBro Admin" },
+      { id: 5, image: `${baseUrl}/ojekbro/ob-5.png`, alt: "OjekBro Admin" },
     ],
   },
 ]

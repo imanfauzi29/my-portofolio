@@ -34,7 +34,7 @@ export default function ProjectDialog({ children, lists }: ProjectDialogProps) {
                 </Link>
               )}
               <div
-                className="list-disc text-justify font-light hyphens-auto text-gray-800 md:text-balance"
+                className="font-light text-pretty text-gray-800"
                 dangerouslySetInnerHTML={{
                   __html: description,
                 }}
@@ -82,7 +82,7 @@ export default function ProjectDialog({ children, lists }: ProjectDialogProps) {
                 color: "transparent",
               }}
             >
-              Double click to close
+              click to close
             </motion.div>
           </div>
         </>
