@@ -52,7 +52,7 @@ function FoldImage({ image, setImages, images, onClick }: FoldImageProps) {
 
   return (
     <MotionImage
-      src={image.image}
+      src={`/images/portofolio/${image.image}`}
       width="0"
       height="0"
       sizes="100vw"
@@ -122,7 +122,7 @@ export default function FoldImages({ images }: FoldImagesProps) {
           >
             <motion.div className="relative">
               <Image
-                src={selectedImage.image}
+                src={`/images/portofolio/${selectedImage.image}`}
                 alt={selectedImage.alt}
                 width={800}
                 height={600}

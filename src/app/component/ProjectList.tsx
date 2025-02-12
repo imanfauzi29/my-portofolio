@@ -31,13 +31,13 @@ export default function ProjectList({
         >
           <OverlayCard className="h-[520px] min-w-64 rounded-4xl">
             <Image
-              src={image[0].image}
+              src={`/images/portofolio/${image[0].image}`}
               alt=""
               data-id={image[0].id}
               width={0}
               height={0}
               sizes="100vw"
-              className="size-full object-cover"
+              className="size-full object-cover object-top"
             />
           </OverlayCard>
           <div>

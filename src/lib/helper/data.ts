@@ -1,6 +1,5 @@
 import { ProjectListType } from "@/app/component/ProjectList"
 
-const baseUrl = "/images/portofolio"
 export const projects: ProjectListType[] = [
   {
     id: 1,
@@ -12,7 +11,9 @@ export const projects: ProjectListType[] = [
     url: "ifauzi.space",
     tech: ["Next.js", "TailwindCSS", "Typescript", "Framer Motion", "Zustand"],
     image: [
-      { id: 1, image: `${baseUrl}/porto-1.png`, alt: "Portofolio Website" },
+      { id: 1, image: `porto.png`, alt: "Portofolio Website" },
+      { id: 2, image: `porto-1.png`, alt: "Portofolio Website" },
+      { id: 3, image: `porto-2.png`, alt: "Portofolio Website" },
     ],
   },
   {
@@ -26,12 +27,17 @@ export const projects: ProjectListType[] = [
     image: [
       {
         id: 1,
-        image: `${baseUrl}/invie/invie-1.png`,
+        image: `invie/invie.png`,
         alt: "Customer Dashboard Invie",
       },
       {
         id: 2,
-        image: `${baseUrl}/invie/invie-2.png`,
+        image: `invie/invie-1.png`,
+        alt: "Customer Dashboard Invie",
+      },
+      {
+        id: 3,
+        image: `invie/invie-2.png`,
         alt: "Customer Dashboard Invie",
       },
     ],
@@ -47,17 +53,22 @@ export const projects: ProjectListType[] = [
     image: [
       {
         id: 1,
-        image: `${baseUrl}/lumoshive/ppob-1.png`,
+        image: `lumoshive/ppob.png`,
         alt: "PPOB (Payment Point Online Bank)",
       },
       {
         id: 2,
-        image: `${baseUrl}/lumoshive/ppob-2.png`,
+        image: `lumoshive/ppob-1.png`,
         alt: "PPOB (Payment Point Online Bank)",
       },
       {
         id: 3,
-        image: `${baseUrl}/lumoshive/ppob-3.png`,
+        image: `lumoshive/ppob-2.png`,
+        alt: "PPOB (Payment Point Online Bank)",
+      },
+      {
+        id: 4,
+        image: `lumoshive/ppob-3.png`,
         alt: "PPOB (Payment Point Online Bank)",
       },
     ],
@@ -73,12 +84,17 @@ export const projects: ProjectListType[] = [
     image: [
       {
         id: 1,
-        image: `${baseUrl}/lumoshive/stp-1.png`,
+        image: `lumoshive/stp.png`,
         alt: "Sales Track Pro (Feature kanban)",
       },
       {
         id: 2,
-        image: `${baseUrl}/lumoshive/stp-2.png`,
+        image: `lumoshive/stp-1.png`,
+        alt: "Sales Track Pro (Feature kanban)",
+      },
+      {
+        id: 3,
+        image: `lumoshive/stp-2.png`,
         alt: "Sales Track Pro (Feature kanban)",
       },
     ],
@@ -94,22 +110,27 @@ export const projects: ProjectListType[] = [
     image: [
       {
         id: 1,
-        image: `${baseUrl}/lumoshive/internal-1.png`,
+        image: `lumoshive/landingpage.png`,
         alt: "Internal Website",
       },
       {
         id: 2,
-        image: `${baseUrl}/lumoshive/internal-2.png`,
+        image: `lumoshive/internal-1.png`,
         alt: "Internal Website",
       },
       {
         id: 3,
-        image: `${baseUrl}/lumoshive/internal-3.png`,
+        image: `lumoshive/internal-2.png`,
         alt: "Internal Website",
       },
       {
         id: 4,
-        image: `${baseUrl}/lumoshive/internal-4.png`,
+        image: `lumoshive/internal-3.png`,
+        alt: "Internal Website",
+      },
+      {
+        id: 5,
+        image: `lumoshive/internal-4.png`,
         alt: "Internal Website",
       },
     ],
@@ -126,22 +147,27 @@ export const projects: ProjectListType[] = [
     image: [
       {
         id: 1,
-        image: `${baseUrl}/orderfaz/of-1.png`,
+        image: `orderfaz/orderfaz.png`,
         alt: "Orderfaz Merchant Dashboard (Feature Landing Page Builder & Funnel Builder)",
       },
       {
         id: 2,
-        image: `${baseUrl}/orderfaz/of-2.png`,
+        image: `orderfaz/of-1.png`,
         alt: "Orderfaz Merchant Dashboard (Feature Landing Page Builder & Funnel Builder)",
       },
       {
         id: 3,
-        image: `${baseUrl}/orderfaz/of-3.png`,
+        image: `orderfaz/of-2.png`,
         alt: "Orderfaz Merchant Dashboard (Feature Landing Page Builder & Funnel Builder)",
       },
       {
         id: 4,
-        image: `${baseUrl}/orderfaz/of-4.png`,
+        image: `orderfaz/of-3.png`,
+        alt: "Orderfaz Merchant Dashboard (Feature Landing Page Builder & Funnel Builder)",
+      },
+      {
+        id: 5,
+        image: `orderfaz/of-4.png`,
         alt: "Orderfaz Merchant Dashboard (Feature Landing Page Builder & Funnel Builder)",
       },
     ],
@@ -155,11 +181,12 @@ export const projects: ProjectListType[] = [
     url: null,
     tech: ["React", "Typescript", "TailwindCSS"],
     image: [
-      { id: 1, image: `${baseUrl}/ojekbro/ob-1.png`, alt: "OjekBro Admin" },
-      { id: 2, image: `${baseUrl}/ojekbro/ob-2.png`, alt: "OjekBro Admin" },
-      { id: 3, image: `${baseUrl}/ojekbro/ob-3.png`, alt: "OjekBro Admin" },
-      { id: 4, image: `${baseUrl}/ojekbro/ob-4.png`, alt: "OjekBro Admin" },
-      { id: 5, image: `${baseUrl}/ojekbro/ob-5.png`, alt: "OjekBro Admin" },
+      { id: 1, image: `ojekbro/ojekbro.png`, alt: "OjekBro Admin" },
+      { id: 2, image: `ojekbro/ob-1.png`, alt: "OjekBro Admin" },
+      { id: 3, image: `ojekbro/ob-2.png`, alt: "OjekBro Admin" },
+      { id: 4, image: `ojekbro/ob-3.png`, alt: "OjekBro Admin" },
+      { id: 5, image: `ojekbro/ob-4.png`, alt: "OjekBro Admin" },
+      { id: 6, image: `ojekbro/ob-5.png`, alt: "OjekBro Admin" },
     ],
   },
 ]
